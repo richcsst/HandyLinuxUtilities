@@ -15,7 +15,7 @@ use Term::ANSIColor;
 use List::Util qw(min max);
 
 BEGIN {
-	our $VERSION = '1.02';
+	our $VERSION = '1.03';
 }
 
 my $MAX = 0;
@@ -24,7 +24,7 @@ foreach my $e (keys %ENV) {
     $MAX = max(length($e), $MAX);
 }
 
-print "\n################ Environment Variables ###################\n\n";
+print "\n", colored(['bright_white','on_blue'], '################'), colored(['bright_yellow'], ' Environment Variables '), colored(['bright_white','on_blue'], '###################'), "\n\n";
 
 foreach my $env (sort(keys %ENV)) {
     if ($ENV{$env} =~ /\n/g) {
@@ -72,24 +72,36 @@ foreach my $env (sort(keys %ENV)) {
         my $line      = $ENV{$env};
         $line =~ s/256color/$colorized/;
         print colored(['bold white'], sprintf("%${MAX}s", $env)), ' = ', $line, "\n";
-	} elsif ($env =~ /GNOME_SHELL_SESSION_MODE|GDMSESSION|DESKTOP_SESSION|XDG_SESSION_DESKTOP/) {
-		if ($ENV{$env} eq 'ubuntu') {
-			print colored(['bold white'], sprintf("%${MAX}s", $env)) . " = \e[202m" . $ENV{$env} . "\e[0m\n";
-		} elsif ($ENV{$env} eq 'redhat') {
-			print colored(['bold white'], sprintf("%${MAX}s", $env)) . ' = ' . colored(['bright_red'], $ENV{$env}) . "\n";
-		} elsif ($ENV{$env} eq 'fedora') {
-			print colored(['bold white'], sprintf("%${MAX}s", $env)) . ' = ' . colored(['bright_cyan'], $ENV{$env}) . "\n";
-		} elsif ($ENV{$env} eq 'mint') {
-			print colored(['bold white'], sprintf("%${MAX}s", $env)) . ' = ' . colored(['bright_green'],$ENV{$env}) . "\n";
-		} elsif ($ENV{$env} eq 'zorin') {
-			print colored(['bold white'], sprintf("%${MAX}s", $env)) . ' = ' . colored(['bright_white'],$ENV{$env}) . "\n";
-		} else {
-			print colored(['bold white'], sprintf("%${MAX}s", $env)) . ' = ' . $ENV{$env} . "\n";
-		}
     } elsif ($env eq 'WHATISMYIP') {
         print colored(['bold white'], sprintf("%${MAX}s", $env)), ' = ', colored(['bright_green'], $ENV{$env}), "\n";
     } else {
-        print colored(['bold white'], sprintf("%${MAX}s", $env)), ' = ', $ENV{$env}, "\n";
+		my $orig = $ENV{$env};
+		my $new;
+		if ($orig =~ /(ubuntu)/i) {
+			$new = "\e[202m" . $1 . "\e[0m";
+			$orig =~ s/$1/$new/g;
+		}
+		if ($orig =~ /(redhat)/i) {
+			$new = colored(['bright_red'], $1);
+			$orig =~ s/$1/$new/g;
+		}
+		if ($orig =~ /(fedora)/i) {
+			$new = colored(['bright_cyan'], $1);
+			$orig =~ s/$1/$new/g;
+		}
+		if ($orig =~ /(mint)/i) {
+			$new = colored(['bright_green'],$1);
+			$orig =~ s/$1/$new/g;
+		}
+		if ($orig =~ /(zorin)/i) {
+			$new = colored(['bright_white'], $1);
+			$orig =~ s/$1/$new/g;
+		}
+		if ($orig =~ /(wayland)/i) {
+			$new = colored(['bright_yellow'], $1);
+			$orig =~ s/$1/$new/g;
+		}
+		print colored(['bold white'], sprintf("%${MAX}s", $env)) . ' = ' . $orig . "\n";
     }
 } ## end foreach my $env (sort(keys ...))
 
