@@ -16,7 +16,7 @@ use Term::ANSIColor;
 use List::Util qw(min max);
 
 BEGIN {
-	our $VERSION = '1.03';
+	our $VERSION = '1.04';
 }
 
 my $MAX = 0;
