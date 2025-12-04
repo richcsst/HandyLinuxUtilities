@@ -100,6 +100,8 @@ static int has_ipv4(const char *s, char *buf, size_t bufsz) {
 
 /* print value with highlighted special substrings */
 static void print_colored_value(const char *envname, const char *val) {
+    (void)envname; /* envname is unused in this function; silence compiler warning */
+
     const char *s = val;
     /* Quick path: check for rarity of matches */
     if (!my_strcasestr(s, "truecolor") && !my_strcasestr(s, "256color") &&
