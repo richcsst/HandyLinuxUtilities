@@ -30,7 +30,7 @@ Or change prefix:
 
 Run the binary:
 
-    ./showenv
+    showenv
 
 It will print environment variables to stdout with colored highlights. Use in a terminal that supports ANSI colors.
 
