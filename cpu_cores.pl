@@ -16,14 +16,13 @@ use Sys::Info::Constants qw( :device_cpu );
 my $info = Sys::Info->new;
 my $cpu  = $info->device('CPU');
 
-
 if (defined($ARGV[0])) {
     if (my $httpd = $info->httpd) {
         print "HTTP Server is $httpd\n";
     }
     my $os = $info->os;
-    printf("\n OS:  %s\n",$os->name(long => 1));
-    printf("CPU:  %s\n\n",scalar($cpu->identify));
+    printf("\n OS:  %s\n", $os->name(long => 1));
+    printf("CPU:  %s\n\n", scalar($cpu->identify));
 } else {
     print $cpu->count, "\n";
 }
