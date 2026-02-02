@@ -31,7 +31,7 @@ foreach my $env (sort(keys %ENV)) {
     if ($ENV{$env} =~ /\n/) {
         my @in     = split(/\n/, $ENV{$env});
         my $indent = $MAX + 4;
-        my $new    = sprintf("%${MAX}s = ---", $env), "\n";
+        my $new    = sprintf("%${MAX}s = ---", $env) . "\n";
         my $ch     = colored(['bright_white'], 'WHATISMYIP_INFO');
         $new =~ s/WHATISMYIP_INFO/$ch/;
         print "$new\n";
