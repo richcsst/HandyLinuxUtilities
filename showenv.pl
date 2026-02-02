@@ -25,7 +25,7 @@ foreach my $e (keys %ENV) {
     $MAX = max(length($e), $MAX);
 }
 
-print "\n", colored(['bright_white', 'on_blue'], "\e[2K  Environment Variables"), "\n";
+print "\n", colored(['bright_yellow', 'on_blue'], "\e[2K  Environment Variables"), "\n";
 
 foreach my $env (sort(keys %ENV)) {
     if ($ENV{$env} =~ /\n/) {
