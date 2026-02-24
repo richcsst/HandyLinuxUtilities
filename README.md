@@ -16,16 +16,6 @@ To build:
 
 This produces the `showenv` binary.
 
-### Install
-
-By default, installation goes to /usr/local/bin. To install:
-
-    sudo make install
-
-Or change prefix:
-
-    sudo make PREFIX=/opt install
-
 ### Usage
 
 Run the binary:
