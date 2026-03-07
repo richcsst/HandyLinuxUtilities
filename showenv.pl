@@ -16,10 +16,12 @@ use Term::ANSIColor;
 use List::Util qw(min max);
 
 BEGIN {
-    our $VERSION = '1.04';
+    our $VERSION = '1.05';
 }
 
-my $MAX = 0;
+my $MAX  = 0;
+my $ul   = "\e[4m";
+my $bold = "\e[1m";
 
 foreach my $e (keys %ENV) {
     $MAX = max(length($e), $MAX);
@@ -58,7 +60,7 @@ foreach my $env (sort(keys %ENV)) {
             }
         } ## end foreach my $line (@in)
     } else {
-        print colored(['bold white'], sprintf("%${MAX}s", $env)) . ' = ' . colorize_values($env, $ENV{$env}) . "\n";
+        print $bold, colored(['black on_bright_black'], sprintf(" %${MAX}s ", $env)) . ' = ' . colorize_values($env, $ENV{$env}) . "\n";
     }
 } ## end foreach my $env (sort(keys ...))
 
