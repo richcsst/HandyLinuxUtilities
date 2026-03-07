@@ -4,18 +4,6 @@ A collection of small utilities for Linux. This repository includes showenv, a s
 
 ## showenv
 
-showenv is a C port of the original Perl script showenv.pl. It lists environment variables, aligns names, highlights IPv4 addresses, and applies colors to known substrings such as "truecolor", "256color", various distro names, and "wayland".
-
-### Build
-
-Requirements: a C compiler (gcc/clang) and make.
-
-To build:
-
-    make
-
-This produces the `showenv` binary.
-
 ### Usage
 
 Run the binary:
@@ -23,13 +11,6 @@ Run the binary:
     showenv.pl
 
 It will print environment variables to stdout with colored highlights. Use in a terminal that supports ANSI colors.
-
-### Development
-
-- The Makefile builds the program with `-std=c11 -Wall -Wextra -O2`.
-- To clean the build artifact:
-
-    make clean
 
 ### License
 
