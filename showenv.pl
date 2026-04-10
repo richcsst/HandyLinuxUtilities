@@ -156,9 +156,5 @@ And available on CPAN:
  *  Graphics::Framebuffer
  *  Term::ANSIEncode
 
-Also working on:
-
- *  BBS::Universal - A Perl based Internet BBS server
-
 =cut
 
