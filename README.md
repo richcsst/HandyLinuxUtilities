@@ -62,6 +62,8 @@ For detailed CPU description:
 
 Populates WHATISMYIP and WHATISMYIP_INFO environment variables using your whatismyip.com API key (signup is free for personal use).  It works great in the ```/etc/bash.bashrc``` file.
 
+**showenv.pl** formats these variables on output.
+
 ### Usage
 
 ```bash
