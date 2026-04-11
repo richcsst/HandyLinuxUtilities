@@ -58,7 +58,7 @@ For detailed CPU description:
 ./cpu_cores.py 1
 ```
 
-## wimip
+## wimip.sh
 
 Populates WHATISMYIP and WHATISMYIP_INFO environment variables using your whatismyip.com API key (signup is free for personal use).  It works great in the ```/etc/bash.bashrc``` file.
 
