@@ -34,7 +34,7 @@ foreach my $env (sort(keys %ENV)) {
         my @in     = split(/\n/, $ENV{$env});
         my $indent = $MAX + 4;
         my $new    = sprintf("%${MAX}s = ---", $env) . "\n";
-        my $ch     = colored(['bright_white'], 'WHATISMYIP_INFO');
+        my $ch     = $bold . colored(['black on_bright_black'], sprintf(" %${MAX}s ", $env));
         $new =~ s/WHATISMYIP_INFO/$ch/;
         print "$new\n";
         foreach my $line (@in) {
@@ -49,8 +49,8 @@ foreach my $env (sort(keys %ENV)) {
                 } elsif ($f eq 'ISP') {
                     $l = colored(['bright_white'], $l);
                 }
-                my $le = 11 - length($f);
-                $f .= ' ' x $le;
+                my $le = 12 - length($f);
+                $f .= ' ' x $le if ($le > 0);
 
                 $l = colored(['green'],    uc($l))                                                                  if ($l =~ /^ok/i);
                 $l = colored(['bold red'], 'U') . colored(['bold white'], 'S') . colored(['bold bright_blue'], 'A') if ($l =~ /^us/i);
