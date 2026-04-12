@@ -70,6 +70,16 @@ Populates WHATISMYIP and WHATISMYIP_INFO environment variables using your whatis
 wimip [what is my ip key]
 ```
 
+## readmd.pl
+
+Renders markdown file.  Requires "Text::Markdown" and "lynx".
+
+### Usage
+
+```bash
+readmd.pl [file]
+```
+
 ## COPYRIGHT
 
 Copyright © 2020-2026 Richard Kelsch,
