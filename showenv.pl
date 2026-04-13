@@ -30,13 +30,11 @@ foreach my $e (keys %ENV) {
 print "\n", colored(['bright_yellow', 'on_blue'], "\e[2K  Environment Variables"), "\n";
 
 foreach my $env (sort(keys %ENV)) {
-    if ($ENV{$env} =~ /\n/) {
-        my @in     = split(/\n/, $ENV{$env});
+    if ($env eq 'WHATISMYIP_INFO') {
+        my @in     = split(/\n|;/, $ENV{$env});
         my $indent = $MAX + 4;
-        my $new    = sprintf("%${MAX}s = ---", $env) . "\n";
-        my $ch     = $bold . colored(['black on_bright_black'], sprintf(" %${MAX}s ", $env));
-        $new =~ s/WHATISMYIP_INFO/$ch/;
-        print "$new\n";
+        my $ch     = $bold . colored(['black on_bright_black'], sprintf(" %${MAX}s ", $env)) . ' ---';
+        print "$ch\n";
         foreach my $line (@in) {
             if ($line =~ /\:/) {
                 my ($f, $l) = $line =~ /^(.*?):(.*)/;
