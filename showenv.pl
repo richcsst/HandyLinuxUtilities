@@ -48,7 +48,7 @@ foreach my $env (sort(keys %ENV)) {
                     $l = colored(['bright_white'], $l);
                 }
                 my $le = 12 - length($f);
-                $f .= ' ' x $le if ($le > 0);
+                $f = ' ' x $le . $f if ($le > 0);
 
                 $l = colored(['green'],    uc($l))                                                                  if ($l =~ /^ok/i);
                 $l = colored(['bold red'], 'U') . colored(['bold white'], 'S') . colored(['bold bright_blue'], 'A') if ($l =~ /^us/i);
