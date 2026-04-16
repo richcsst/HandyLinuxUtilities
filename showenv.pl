@@ -35,7 +35,7 @@ foreach my $env (sort(keys %ENV)) {
     if ($env eq 'WHATISMYIP_INFO') {
         my @in     = split(/\n|;/, $ENV{$env});
         my $indent = $MAX + 4;
-        my $ch     = $bold . colored(['black on_white'], sprintf(" %${MAX}s ", $env)) . " = $ENV{$env}";
+        my $ch     = $bold . colored(['yellow on_red'], sprintf(" %${MAX}s ", $env)) . " = $ENV{$env}";
         print "$ch\n";
         foreach my $line (@in) {
             if ($line =~ /\:/) {
@@ -62,7 +62,7 @@ foreach my $env (sort(keys %ENV)) {
 	} elsif ($env =~ /^(PATH|LS_COLORS)$/) {
 		my @in     = split(/:/, $ENV{$env});
         my $indent = $MAX + 4;
-        my $ch     = $bold . colored(['black on_white'], sprintf(" %${MAX}s ", $env)) . " = $ENV{$env}";
+        my $ch     = $bold . colored(['yellow on_red'], sprintf(" %${MAX}s ", $env)) . " = $ENV{$env}";
         print "$ch\n";
 		my $count = 0;
 		my $max = ($wchar - 25) / 20;
@@ -86,7 +86,7 @@ foreach my $env (sort(keys %ENV)) {
 		}
 		print "\n" if ($env eq 'LS_COLORS' && $count);
     } else {
-        print $bold, colored(['black on_white'], sprintf(" %${MAX}s ", $env)) . ' = ' . colorize_values($env, $ENV{$env}) . "\n";
+        print $bold, colored(['yellow on_red'], sprintf(" %${MAX}s ", $env)) . ' = ' . colorize_values($env, $ENV{$env}) . "\n";
     }
 } ## end foreach my $env (sort(keys ...))
 
