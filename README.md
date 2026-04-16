@@ -67,7 +67,7 @@ A collection of small utilities for Linux. This repository includes showenv, a s
    ### Usage
 
    ```bash
-   wimip [what is my ip key]
+   export WHATISMYIP_INFO=`wimip [what is my ip key]`
    ```
 
 ## readmd.pl
