@@ -94,6 +94,6 @@ A collection of small utilities for Linux. This repository includes showenv, a s
 
 [http://www.perlfoundation.org/artistic_license_2_0](http://www.perlfoundation.org/artistic_license_2_0)
 
-### Author
+## Author
 
    Richard Kelsch <rich@rk-internet.com>
