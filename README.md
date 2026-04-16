@@ -60,9 +60,9 @@ A collection of small utilities for Linux. This repository includes showenv, a s
 
 ## wimip.sh
 
-   Populates WHATISMYIP and WHATISMYIP_INFO environment variables using your whatismyip.com API key (signup is free for personal use).  It works great in the ```/etc/bash.bashrc``` file.
+   Tool to populate WHATISMYIP_INFO environment variable using your whatismyip.com API key (signup is free for personal use).  It works great in the ```/etc/bash.bashrc``` file.
 
-   **showenv.pl** formats these variables on output.
+   **showenv.pl** formats the variable on output.
 
    ### Usage
 
