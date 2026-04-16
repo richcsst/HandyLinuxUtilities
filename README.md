@@ -4,99 +4,96 @@ A collection of small utilities for Linux. This repository includes showenv, a s
 
 ## showenv
 
-### Usage
+   ### Usage
 
-Run the binary:
+   Run the binary:
 
-```bash
-./showenv.pl
-```
+   ```bash
+   ./showenv.pl
+   ```
 
-It will print environment variables to stdout with colored highlights. Use in a terminal that supports ANSI colors.
+   It will print environment variables to stdout with colored highlights. Use in a terminal that supports ANSI colors.
 
 ## awesome.sh
 
-### Usage
+   ### Usage
 
-```bash
-./awesome.sh
-```
+   ```bash
+   ./awesome.sh
+   ```
 
-This will install the patched "Awesome" source code fonts for terminals.  These fonts have all of the glyphs and graphics characters, as well as a full Unicode set.
+   This will install the patched "Awesome" source code fonts for terminals.  These fonts have all of the glyphs and graphics characters, as well as a full Unicode set.
 
-They are really nice and easy to read fonts for coding.
+   They are really nice and easy to read fonts for coding.
 
 ## cpu_cores.pl
 
-### Usage
+   ### Usage
 
-For simple core count:
+   For simple core count:
 
-```bash
-./cpu_cores.pl
-```
+   ```bash
+   ./cpu_cores.pl
+   ```
 
-For detailed CPU description:
+   For detailed CPU description:
 
-```bash
-./cpu_cores.pl 1
-```
+   ```bash
+   ./cpu_cores.pl 1
+   ```
 
-## cpu_cores.py
+   * cpu_cores.py
 
-### Usage
+   ### Usage
 
-For simple core count:
+   For simple core count:
 
-```bash
-./cpu_cores.py
-```
+   ```bash
+   ./cpu_cores.py
+   ```
 
-For detailed CPU description:
+   For detailed CPU description:
 
-```bash
-./cpu_cores.py 1
-```
+   ```bash
+   ./cpu_cores.py 1
+   ```
 
 ## wimip.sh
 
-Populates WHATISMYIP and WHATISMYIP_INFO environment variables using your whatismyip.com API key (signup is free for personal use).  It works great in the ```/etc/bash.bashrc``` file.
+   Populates WHATISMYIP and WHATISMYIP_INFO environment variables using your whatismyip.com API key (signup is free for personal use).  It works great in the ```/etc/bash.bashrc``` file.
 
-**showenv.pl** formats these variables on output.
+   **showenv.pl** formats these variables on output.
 
-### Usage
+   ### Usage
 
-```bash
-wimip [what is my ip key]
-```
+   ```bash
+   wimip [what is my ip key]
+   ```
 
 ## readmd.pl
 
-Renders markdown file.  Requires "Text::Markdown" and "lynx".
+   Renders markdown file.  Requires "Text::Markdown" and "lynx".
 
-### Usage
+   ### Usage
 
-```bash
-readmd.pl [file]
-```
+   ```bash
+   readmd.pl [file]
+   ```
 
 ## COPYRIGHT
 
-Copyright © 2020-2026 Richard Kelsch,
+   Copyright © 2020-2026 Richard Kelsch,
 
-All Rights Reserved
+   All Rights Reserved
 
 ## LICENSE
 
 ### Perl Artistic License 2.0
 
-This program is free software; you can redistribute it and/or modify it
-under the terms of the the Artistic License (2.0). You may obtain a
-copy of the full license at:
+   This program is free software; you can redistribute it and/or modify it under the terms of the the Artistic License (2.0). You may obtain a copy of the full license at:
 
 [http://www.perlfoundation.org/artistic_license_2_0](http://www.perlfoundation.org/artistic_license_2_0)
 
 ### Author
 
-Richard Kelsch <rich@rk-internet.com>
-
+   Richard Kelsch <rich@rk-internet.com>
