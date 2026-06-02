@@ -1,7 +1,7 @@
 # Contents
 
-* [The Artistic License](#the_artistic_license)
-* [The MIT License](#the_mit_license)
+* [The Artistic License](#the-artistic-license)
+* [The MIT License](#the-mit-license)
 
 # The "Artistic License"
 
