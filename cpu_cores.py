@@ -2,7 +2,7 @@
 
 # Written by Richard Kelsch (converted to Python)
 # Copyright 2023-2025 Richard Kelsch
-# Freely usable under the MIT License
+# Freely usable under the MIT License (See the bottom of the LICENSE file)
 
 import sys
 import platform
