@@ -3,7 +3,7 @@
 # This installs the Awesome Terminal Fonts that are great for programmers and ANSI output.
 
 # Copy the awesome fonts to ~/.fonts
-cd /tmp
+pushd /tmp
 git clone http://github.com/gabrielelana/awesome-terminal-fonts
 cd awesome-terminal-fonts
 git checkout patching-strategy
@@ -12,4 +12,4 @@ cp patched/*.ttf ~/.fonts
 
 # update the font-info cache
 sudo fc-cache -fv ~/.fonts
-
+popd
