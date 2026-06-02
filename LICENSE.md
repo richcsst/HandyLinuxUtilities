@@ -58,7 +58,7 @@ The intent of this document is to state the conditions under which a Package may
 
 ## The End
 
-===============================================================================
+---
 
 # The MIT License (MIT)
 
