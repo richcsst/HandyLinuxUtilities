@@ -17,7 +17,7 @@ use Term::ReadKey;
 use List::Util qw(min max);
 
 BEGIN {
-    our $VERSION = '1.05';
+    our $VERSION = '1.06';
 }
 
 my ($wchar, $hchar, $wpixels, $hpixels) = GetTerminalSize();
@@ -32,62 +32,7 @@ foreach my $e (keys %ENV) {
 print "\n", colored(['bright_yellow', 'on_blue'], "\e[2K  Environment Variables"), "\n";
 
 foreach my $env (sort(keys %ENV)) {
-    if ($env eq 'WHATISMYIP_INFO') {
-        my @in     = split(/\n|;/, $ENV{$env});
-        my $indent = $MAX + 4;
-        my $ch     = $bold . colored(['yellow on_red'], sprintf(" %${MAX}s ", $env)) . " = $ENV{$env}";
-        print "$ch\n";
-        foreach my $line (@in) {
-            if ($line =~ /\:/) {
-                my ($f, $l) = $line =~ /^(.*?):(.*)/;
-                chomp($l);
-                chomp($f);
-                $f = uc($f);
-                if ($f eq 'IP') {
-                    $l = colored(['bright_green'], $l);
-                    $f = 'IP ADDRESS';
-                } elsif ($f eq 'ISP') {
-                    $l = colored(['bright_white'], $l);
-                }
-                my $le = 12 - length($f);
-                $f = ' ' x $le . $f if ($le > 0);
-
-                $l = colored(['green'],    uc($l))                                                                  if ($l =~ /^ok/i);
-                $l = colored(['bold red'], 'U') . colored(['bold white'], 'S') . colored(['bold bright_blue'], 'A') if ($l =~ /^us/i);
-                print colored(['bold cyan'], sprintf("%${indent}s", $f)) . " = $l\n";
-            } else {
-                print "$line\n";
-            }
-        } ## end foreach my $line (@in)
-	} elsif ($env =~ /^(PATH|LS_COLORS)$/) {
-		my @in     = split(/:/, $ENV{$env});
-        my $indent = $MAX + 4;
-        my $ch     = $bold . colored(['yellow on_red'], sprintf(" %${MAX}s ", $env)) . " = $ENV{$env}";
-        print "$ch\n";
-		my $count = 0;
-		my $max = ($wchar - 25) / 20;
-		foreach my $line (@in) {
-			if ($env eq 'PATH') {
-				my $f  = ' ' x 25 . $line;
-				print colored(['bold cyan'], $f), "\n";
-			} else {
-				if ($count == 0) {
-					print colored(['bold cyan'], sprintf('%25s', $line));
-					$count++;
-				} else {
-					print colored(['bold cyan'], sprintf('%20s', $line));
-					$count++;
-					if ($count > $max) {
-						print "\n";
-						$count = 0;
-					}
-				}
-			}
-		}
-		print "\n" if ($env eq 'LS_COLORS' && $count);
-    } else {
         print $bold, colored(['yellow on_red'], sprintf(" %${MAX}s ", $env)) . ' = ' . colorize_values($env, $ENV{$env}) . "\n";
-    }
 } ## end foreach my $env (sort(keys ...))
 
 print colored(['on_blue'], "\e[2K"), "\n";
