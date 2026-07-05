@@ -66,7 +66,7 @@ A collection of small utilities for Linux. This repository includes showenv, a s
 
 ![Divider](pics/pink.jpg?raw=true "Divider")
 
-## wimip.p(y|l)
+## wimip.sh
 
    Tool to populate WHATISMYIP_INFO environment variable using your whatismyip.com API key (signup is free for personal use).  It works great in the ```/etc/bash.bashrc``` file.
 
@@ -75,8 +75,7 @@ A collection of small utilities for Linux. This repository includes showenv, a s
    ### Usage
 
    ```bash
-   eval(perl ./wimip.pl [what is my ip key]);
-   eval(python3 ./wimip.py [what is my ip key]);
+   export WHATISMYIP_INFO=`wimip [what is my ip key]`
    ```
 
 ![Divider](pics/pink.jpg?raw=true "Divider")
